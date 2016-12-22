@@ -1,5 +1,6 @@
 # Code snippet for the binary search tree validation problem in hackerrank
 # Link : https://www.hackerrank.com/challenges/ctci-is-binary-search-tree
+# TODO: fails at weird edge cases
 
 """ Node is defined as
 class node:
