@@ -51,9 +51,9 @@ func kangaroo(d *double) string {
 		return "YES"
 	} else if d.u.x >= d.w.x && d.u.y >= d.w.y {
 		return "NO"
-	} else {
-		d.u.x += d.u.y
-		d.w.x += d.w.y
-		return kangaroo(d)
 	}
+
+	d.u.x += d.u.y
+	d.w.x += d.w.y
+	return kangaroo(d)
 }
