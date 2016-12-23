@@ -18,6 +18,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -35,6 +36,8 @@ func main() {
 	comb := append(a, b...)
 
 	validator := checkDenominator(a, b)
+	aToX := getMaximum(a)
+	bToX := getMinimum(b)
 
 	factorMap := map[int]int{}
 
@@ -42,7 +45,7 @@ func main() {
 		for _, i := range comb {
 			factorArray := numberFactors(i)
 			for _, j := range factorArray {
-				factorMap[j] += 1
+				factorMap[j]++
 			}
 		}
 	} else {
@@ -50,7 +53,7 @@ func main() {
 		return
 	}
 
-	count := countFactors(factorMap, a)
+	count := countFactors(factorMap, a, aToX, bToX)
 	fmt.Println(count)
 }
 
@@ -90,14 +93,25 @@ func numberFactors(n int) []int {
 	return array
 }
 
-func countFactors(m map[int]int, a []int) int {
+func countFactors(m map[int]int, a []int, aMax, bMin int) int {
 	array := make([]int, 0)
 	for key, val := range m {
 		for _, i := range a {
-			if val > 1 && key >= i {
+			if val > 1 && key >= i && val >= aMax && val <= bMin {
 				array = append(array, val)
 			}
 		}
 	}
 	return len(array)
+}
+
+func getMinimum(a []int) int {
+	sort.Ints(a)
+	return a[0]
+}
+
+func getMaximum(a []int) int {
+	total := len(a) - 1
+	sort.Ints(a)
+	return a[total]
 }
