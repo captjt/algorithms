@@ -1,4 +1,4 @@
-package main
+package summation
 
 // Link : https://www.hackerrank.com/challenges/mini-max-sum
 

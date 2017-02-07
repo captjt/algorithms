@@ -12,7 +12,7 @@
 // EXPLANATION
 // The integers that are between A = {2,4} and B = {16, 32, 96} are 4, 8, and 16.
 
-package main
+package sets
 
 import (
 	"bufio"
