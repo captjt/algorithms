@@ -1,3 +1,6 @@
+// premise of this is to validate strings to be a palindrome
+// this means a string is spelled the same way backwards as it is regularly
+
 package main
 
 import (
