@@ -10,7 +10,7 @@ func main() {
 
 	for _, v := range s {
 		check := validatePalidrome(v)
-		fmt.Printf("Word: %s\n    %t\n", v, check)
+		fmt.Printf("Word: >>> %s <<<\nResult: >>> %t <<<\n\n", v, check)
 	}
 }
 
