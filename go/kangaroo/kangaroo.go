@@ -1,4 +1,4 @@
-package kangaroo
+package main
 
 // Link : https://www.hackerrank.com/challenges/kangaroo
 
@@ -36,11 +36,11 @@ func main() {
 		fmt.Println("  Scan for a, b, c & d failed, due to ", err)
 	}
 
-	doub := new(double)
+	doub := double{}
 	doub.u.x, doub.u.y = a, b
 	doub.w.x, doub.w.y = c, d
 
-	response := kangaroo(doub)
+	response := kangaroo(&doub)
 	fmt.Println(response)
 }
 
